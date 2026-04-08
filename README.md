@@ -53,7 +53,7 @@ A vision-guided conversational AI receptionist that detects visitors, engages in
 8. **End:** Conversation ends after confirmation or after N silent attempts
 
 <!-- Insert flowchart image here -->
-![AI Receptionist Flowchart](assets/media/flowchart.png)
+![AI Receptionist Flowchart](assets/media/ai_receptionist_flowchart.svg)
 ## Quick Start
 
 ### 1. Clone & Install
