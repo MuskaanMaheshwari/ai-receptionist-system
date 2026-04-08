@@ -1,0 +1,20 @@
+# AI Receptionist System Dependencies
+
+# OpenAI (GPT-4o, Whisper, TTS)
+openai>=1.0
+
+# Computer Vision (YOLOv8)
+ultralytics>=8.0
+opencv-python>=4.8
+
+# GUI (CustomTkinter)
+customtkinter>=5.2
+Pillow>=10.0
+
+# Audio
+sounddevice>=0.4
+numpy>=1.24
+
+# General
+pyyaml>=6.0
+python-dotenv>=1.0

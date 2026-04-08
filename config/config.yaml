@@ -1,0 +1,76 @@
+# AI Receptionist System Configuration
+# Customize these settings for your organization and hardware
+
+# Office Information
+office:
+  name: "Your Company Name"
+  address: "123 Main Street, City, State"
+  welcome_message: "Welcome to {office_name}!"
+
+# Employee Directory
+# Add your team members here for visitor routing
+employees:
+  - name: "Jane Smith"
+    role: "CEO"
+    email: "jane@example.com"
+  - name: "John Doe"
+    role: "Engineering Manager"
+    email: "john@example.com"
+  - name: "Alice Johnson"
+    role: "HR Manager"
+    email: "alice@example.com"
+
+# Vision Detection (YOLOv8)
+vision:
+  camera_index: 0                # 0 = default webcam, 1+ for multiple cameras
+  model_path: "yolov8n.pt"      # YOLOv8 nano model (auto-downloaded by ultralytics)
+  confidence_threshold: 0.70     # Detection confidence (0.0-1.0)
+  min_bbox_ratio: 0.05           # Minimum person detection size (% of frame)
+  max_bbox_ratio: 0.15           # Maximum person detection size (% of frame)
+  detection_cooldown: 30.0       # Seconds between consecutive visitor triggers
+
+# Conversation Engine (GPT-4o)
+conversation:
+  model: "gpt-4o"                # OpenAI model
+  max_tokens: 150                # Keep responses concise for speech synthesis
+  temperature: 0.7               # Creativity level (0.0=deterministic, 1.0=creative)
+  max_consecutive_failures: 3    # End conversation after N inaudible responses
+
+# Speech Recognition (Whisper)
+speech_recognition:
+  model: "whisper-1"             # OpenAI Whisper
+  language: "en"                 # Language code (en, es, fr, etc.)
+  sample_rate: 16000             # Audio sample rate (Hz)
+  silence_threshold: 500         # RMS threshold for silence detection
+  listen_timeout: 10.0           # Maximum seconds to listen for one phrase
+  phrase_timeout: 3.0            # Silence duration to end current phrase
+  mic_device_index: null         # null = default mic, or specify device ID
+
+# Text-to-Speech (OpenAI TTS)
+tts:
+  model: "tts-1"                 # "tts-1" (fast) or "tts-1-hd" (higher quality, slower)
+  voice: "nova"                  # Voice: alloy, echo, fable, onyx, nova, shimmer
+  speed: 1.0                     # Playback speed (0.25-4.0)
+
+# Email Notifications
+email:
+  enabled: true                  # Enable/disable email notifications
+  smtp_host: "smtp.gmail.com"    # SMTP server (Gmail example)
+  smtp_port: 587                 # SMTP port (587 for TLS)
+  smtp_user: ""                  # Set in .env file as SMTP_USER
+  smtp_password: ""              # Set in .env file as SMTP_PASSWORD
+  from_address: "receptionist@example.com"
+  fallback_recipient: "admin@example.com"  # If target employee has no email
+
+# GUI Dashboard
+gui:
+  fullscreen: false              # true = kiosk mode, false = windowed
+  width: 1024                    # Window width (pixels)
+  height: 768                    # Window height (pixels)
+  theme: "dark"                  # "dark" or "light"
+  animation_fps: 30              # Animation frame rate
+
+# Logging
+logging:
+  level: "INFO"                  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  retention_days: 30             # Keep logs for N days
