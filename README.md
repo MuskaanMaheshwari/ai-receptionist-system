@@ -52,6 +52,8 @@ A vision-guided conversational AI receptionist that detects visitors, engages in
 7. **Offer Help:** "Please have a seat. Jane will be right with you."
 8. **End:** Conversation ends after confirmation or after N silent attempts
 
+<!-- Insert flowchart image here -->
+![AI Receptionist Flowchart](assets/media/flowchart.png)
 ## Quick Start
 
 ### 1. Clone & Install
